@@ -1,9 +1,11 @@
 'use strict';
 
-module.exports.exampleQuery = () => {
-    let sql = 'SELECT * FROM EXAMPLE WHERE user = :userName';
+module.exports.exampleQuery = async function(){
+    let sql = 'SELECT * FROM user WHERE name <= $userName';
     let binds = {
-        userName: 'admin',
+        userName: 'admin'
     };
-    return sql.query(sql, binds);
+
+    let data = await db.query(sql, binds);
+    return data;
 }

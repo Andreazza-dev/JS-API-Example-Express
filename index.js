@@ -7,7 +7,7 @@ global.config = {};
 config = require('./configs/example.config');
 
 // Importando mysql lib de forma global
-global.sql = require('./libs/mysql');
+global.db = require('./libs/mysql');
 
 
 /* 

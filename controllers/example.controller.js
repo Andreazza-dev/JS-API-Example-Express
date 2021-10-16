@@ -19,9 +19,14 @@ module.exports.examplePostJson = (req, res) => {
 }
 
 // Retornando Query
-module.exports.exampleQuery = (req, res) => {
-    let res = model.exampleQuery();
-    res.status(200).json({ message: 'Query teste', res });
+module.exports.exampleQuery = async function(req, res){
+    try{
+        let resQuery = await model.exampleQuery();
+        res.status(200).json({ message: 'Query teste', data: resQuery });
+    }catch(err){
+        
+    }
+    
 }
 
 // Apenas retornando, sem usar padrão json

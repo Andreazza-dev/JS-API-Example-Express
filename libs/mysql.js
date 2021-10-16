@@ -14,7 +14,6 @@ module.exports.query = async function(query, binds){
         bind: binds,
         type: QueryTypes.SELECT
     });
-    console.log(result);
-    console.log(JSON.stringify(result[0], null, 2));
+
     return result;
 }
