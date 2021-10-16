@@ -14,4 +14,8 @@ module.exports = function (app) {
     app.route(routePath + '/example/get').get(controller.exampleGet);
     // <base_url>/examplePathRoute/example :: Method POST
 	app.route(routePath + '/example/post').post(controller.examplePost);  
+
+
+    // <base_url>/examplePathRoute/example/query :: Method GET
+	app.route(routePath + '/example/query').get(controller.exampleQuery);
 }

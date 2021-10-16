@@ -1,8 +1,10 @@
 'use strict';
 
+let model = require('../models/example.model');
+
 // Retornando padrão JSON
 module.exports.exampleGetJson = (req, res) => {
-    res.status(200).json({ message: 'GET OK!' });
+    res.status(200).json({ message: 'GET OK!', qq });
 }
 
 module.exports.examplePostJson = (req, res) => {
@@ -13,8 +15,13 @@ module.exports.examplePostJson = (req, res) => {
     }else{
         data.message = 'Olá sr. fantasma';
     }
-
     res.status(201).json(data);
+}
+
+// Retornando Query
+module.exports.exampleQuery = (req, res) => {
+    let res = model.exampleQuery();
+    res.status(200).json({ message: 'Query teste', res });
 }
 
 // Apenas retornando, sem usar padrão json

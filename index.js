@@ -6,6 +6,9 @@ const app = express();
 global.config = {};
 config = require('./configs/example.config');
 
+// Importando mysql lib de forma global
+global.sql = require('./libs/mysql');
+
 
 /* 
  * Definir o tipo de body que será aceito pela aplicação!
